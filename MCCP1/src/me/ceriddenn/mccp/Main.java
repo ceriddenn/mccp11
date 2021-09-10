@@ -13,18 +13,20 @@ public class Main extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		System.out.println("Enabled");
-		getServer().getPluginManager().registerEvents(new DismountEvent(), this);
-		this.getCommand("toggleon").setExecutor(new ToggleCmd());
-		this.getCommand("toggleoff").setExecutor(new ToggleCmdOff());
-		
+		registerEvents();
+		registerCommands();
 		
 	}
 	
 	public void registerEvents() {
 	getServer().getPluginManager().registerEvents(new DismountEvent(), this);
-		
-		
+		}
+	
+	public void registerCommands() {
+		this.getCommand("toggleon").setExecutor(new ToggleCmd());
+		this.getCommand("toggleoff").setExecutor(new ToggleCmdOff());
 		
 	}
+	
 
 }
