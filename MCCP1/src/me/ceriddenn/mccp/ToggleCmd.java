@@ -16,6 +16,8 @@ public class ToggleCmd implements CommandExecutor {
 		if (sender instanceof Player) {
 			if (args.length >= 1) {
 			Player added = Bukkit.getPlayer(args[0]);
+			player.sendMessage(ChatColor.GREEN + "You have succefully frozen" + " " + added.getName());
+			added.sendMessage(ChatColor.GREEN + "You have been Frozen! If you log out you will be banned.");
 				
 				
 			Main.toggle.add(added.getUniqueId());
