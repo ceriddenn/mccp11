@@ -1,9 +1,12 @@
 package me.ceriddenn.mccp;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import net.md_5.bungee.api.ChatColor;
 
 public class ToggleCmd implements CommandExecutor {
 
@@ -11,10 +14,16 @@ public class ToggleCmd implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player player = (Player) sender;
 		if (sender instanceof Player) {
-			Main.toggle.add(player.getUniqueId());
-			
-			
-		}
+			if (args.length >= 1) {
+			Player added = Bukkit.getPlayer(args[0]);
+				
+				
+			Main.toggle.add(added.getUniqueId());
+			} else {
+				player.sendMessage(ChatColor.AQUA + "You did not run the command properly!" + ChatColor.YELLOW + "Correct Syntax. /toggleon (player)");
+				
+				}
+			}			
 		
 		
 		
@@ -22,5 +31,6 @@ public class ToggleCmd implements CommandExecutor {
 		
 		return false;
 	}
+
 
 }
