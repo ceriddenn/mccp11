@@ -24,7 +24,6 @@ public class FlyToggle implements CommandExecutor {
 				
 						
 						
-						
 				
 			}
 			
