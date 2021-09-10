@@ -4,3 +4,4 @@ main: me.ceriddenn.mccp.Main
 commands:
   toggleon:
   toggleoff:
+  fly:

@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 	
 	public static List<UUID> toggle = new ArrayList<UUID>();
+	public static List<UUID> flytoggle = new ArrayList<UUID>();
 	
 	@Override
 	public void onEnable() {
@@ -25,6 +26,7 @@ public class Main extends JavaPlugin {
 	public void registerCommands() {
 		this.getCommand("toggleon").setExecutor(new ToggleCmd());
 		this.getCommand("toggleoff").setExecutor(new ToggleCmdOff());
+		this.getCommand("fly").setExecutor(new FlyToggle());
 		
 	}
 	
